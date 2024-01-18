@@ -2,7 +2,7 @@
 EnsembleTreeClassifier is a Python script that implements a combination of Decision Trees and AdaBoost for classification tasks. This ensemble approach enhances the performance of decision trees through boosting.
 # Usage
 To train the model, use the following command:
-  python EnsembleTreeClassifier.py train training_data.txt trained_hypothesis.pkl ada/dt
+  bash: python EnsembleTreeClassifier.py train training_data.txt trained_hypothesis.pkl ada/dt
 
 training_data.txt: The file containing the training data.
 trained_hypothesis.pkl: The output file where the trained model will be saved.
@@ -11,7 +11,7 @@ ada/dt: Specify the learning type as ada for AdaBoost or dt for a regular Decisi
 Prediction
 
 To make predictions using the trained model, use the following command:
-  python EnsembleTreeClassifier.py predict trained_hypothesis.pkl test_data.txt
+  bash: python EnsembleTreeClassifier.py predict trained_hypothesis.pkl test_data.txt
 
 trained_hypothesis.pkl: The pre-trained model file generated during training.
 test_data.txt: The file containing the data to be classified.
