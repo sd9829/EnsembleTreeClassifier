@@ -1,0 +1,37 @@
+In this lab, I aimed to classify sentences as either English or Dutch 
+using a decision tree and AdaBoost learning algorithms. The features.py 
+file contains the functions required to extract relevant features from the input sentences.
+
+Features:
+We used the following features for the classification task:
+
+Average word length: We calculated the average length of words in a sentence and checked if it 
+was greater than 5.
+Presence of English articles: We checked if any English articles ("an" or "the") were present 
+in the sentence.
+Presence of Dutch diphthongs: We checked if any common Dutch diphthongs were present 
+in the sentence.
+Presence of Dutch common words: We checked if any common Dutch words were present 
+in the sentence.
+Presence of English common words: We checked if any common English words were present 
+in the sentence.
+Non-English characters: We checked if any non-alphanumeric characters were present 
+in the sentence.
+
+Decision Tree Learning:
+We built a decision tree classifier using the information gain (IG) criterion to 
+find the best attribute to split the dataset at each node. We set the maximum depth 
+of the tree (MAX_DEPTH) to 6. This value was chosen based on experimental evaluation 
+and tuning to balance the trade-off between overfitting and underfitting. After 
+training the decision tree, we evaluated its performance on a test dataset and 
+observed satisfactory classification accuracy.
+
+AdaBoost:
+We used the AdaBoost algorithm to create an ensemble of decision tree classifiers. 
+During the boosting process, we adjusted the weights of the training examples 
+based on the errors made by the current classifier, and normalized the weights 
+after each iteration. We used a single-level decision tree as a weak classifier 
+(ADA_NO_OF_STUMPS = 1). The number of trees in the ensemble was determined by 
+the number of features in the dataset. Our testing showed that the ensemble 
+classifier significantly improved the classification performance compared to a 
+single decision tree.
